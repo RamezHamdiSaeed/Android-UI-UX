@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/myFirstFragment">
+
+    <fragment
+        android:id="@+id/myFirstFragment"
+        android:name="com.example.materialdesignref.MyFirstFragment"
+        android:label="fragment_my_first"
+        tools:layout="@layout/fragment_my_first" >
+        <action
+            android:id="@+id/action_myFirstFragment_to_mySecondFragment"
+            app:destination="@id/mySecondFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/mySecondFragment"
+        android:name="com.example.materialdesignref.MySecondFragment"
+        android:label="fragment_my_second"
+        tools:layout="@layout/fragment_my_second" >
+        <action
+            android:id="@+id/action_mySecondFragment_to_myFirstFragment"
+            app:destination="@id/myFirstFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>
