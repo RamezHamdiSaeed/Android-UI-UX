@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 public class MySecondFragment extends Fragment {
@@ -29,6 +30,8 @@ public class MySecondFragment extends Fragment {
         view.findViewById(R.id.text).setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(R.id.action_mySecondFragment_to_myFirstFragment);
         });
+        String number=MySecondFragmentArgs.fromBundle(getArguments()).getNumber();
+        Toast.makeText(view.getContext(), number, Toast.LENGTH_SHORT).show();
         return view;
 
     }
