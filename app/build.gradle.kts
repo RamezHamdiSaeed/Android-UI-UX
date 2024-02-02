@@ -1,7 +1,12 @@
 plugins {
     id("com.android.application")
+    id ("androidx.navigation.safeargs")
 }
-
+buildscript{
+    dependencies{
+        classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3")
+    }
+}
 android {
     namespace = "com.example.materialdesignref"
     compileSdk = 34

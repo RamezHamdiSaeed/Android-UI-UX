@@ -2,12 +2,11 @@ package com.example.materialdesignref;
 
 import android.os.Bundle;
 
+
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
+
 import androidx.navigation.Navigation;
-import androidx.navigation.Navigator;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +30,10 @@ public class MyFirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.fragment_my_first, container, false);
+        MyFirstFragmentDirections.ActionMyFirstFragmentToMySecondFragment action = MyFirstFragmentDirections.actionMyFirstFragmentToMySecondFragment();
+        action.setNumber("2");
         view.findViewById(R.id.text).setOnClickListener(v -> {
-                    Navigation.findNavController(view).navigate(R.id.action_myFirstFragment_to_mySecondFragment);
+                    Navigation.findNavController(view).navigate(action);
                 });
         return view;
     }
